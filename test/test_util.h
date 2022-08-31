@@ -6,7 +6,7 @@
 #include "delta_builder.h"
 
 File get_file(const std::string &name, const std::string &content) {
-    File file(name, std::ios_base::out|std::ios_base::in);
+    File file(name, std::ios_base::out | std::ios_base::in | std::ios_base::trunc);
     file.write(content.data(), content.length());
     return file;
 }
@@ -24,5 +24,6 @@ Signatures get_signatures(const std::string &buffer) {
 
 Deltas get_deltas(Signatures &signatures, const std::string &buffer) {
     File file = get_file("./new_file", buffer);
+    file.seek(std::ios_base::beg);
     return DeltaBuilder::build(signatures, file);
 }

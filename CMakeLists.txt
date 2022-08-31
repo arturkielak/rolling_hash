@@ -9,7 +9,12 @@ if (!Boost_FOUND)
 	message(FATAL_ERROR "Cannot find Boost")
 endif ()
 
-set(SOURCES src/signature_builder.cpp src/serializable_types.cpp src/hash.cpp src/delta_builder.cpp)
+set(SOURCES
+	src/signature_builder.cpp
+	src/serializable_types.cpp
+	src/hash.cpp
+	src/delta_builder.cpp)
+
 add_executable(rolling_hash src/main.cpp ${SOURCES})
 target_include_directories(rolling_hash PUBLIC "${PROJECT_SOURCE_DIR}/src" ${Boost_INCLUDE_DIRS})
 
