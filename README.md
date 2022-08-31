@@ -1,6 +1,6 @@
 # rolling-hash
 
-Sample implementation rolling hash using checksum like rabin karp and strong hash like MD5 (for example)
+Sample implementation rolling hash using checksum and strong hash like MD5 (for example)
 
 Requirements
 ```
