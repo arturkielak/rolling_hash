@@ -22,3 +22,9 @@ Run test
 cd ./test
 ./test -l all
 ```
+
+Run software
+```
+rolling_hash -s old_file signature_file
+rolling_hash -d signature_file new_file delta_file
+```
